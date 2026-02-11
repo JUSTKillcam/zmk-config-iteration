@@ -3,8 +3,8 @@
     "layouts": {
         "LAYOUT": {
             "layout": [
-                /* Rij 0 (Top) */
-                {"label":"L00", "x":0, "y":0.4, "r":10, "rx":0.5, "ry":1.5}, {"label":"L01", "x":1, "y":0.2}, {"label":"L02", "x":2, "y":0}, {"label":"L03", "x":3, "y":0.1}, {"label":"L04", "x":4, "y":0.3}, {"label":"L05", "x":5, "y":0.5, "w":1, "h":1},
+                /* Rij 0 (Top) - De roze kolom draait om rx/ry */
+                {"label":"L00", "x":0, "y":0.4, "r":10, "rx":0.5, "ry":1.5}, {"label":"L01", "x":1, "y":0.2}, {"label":"L02", "x":2, "y":0}, {"label":"L03", "x":3, "y":0.1}, {"label":"L04", "x":4, "y":0.3}, {"label":"L05", "x":5, "y":0.5},
                 {"label":"R00", "x":8, "y":0.3}, {"label":"R01", "x":9, "y":0.1}, {"label":"R02", "x":10, "y":0}, {"label":"R03", "x":11, "y":0.2}, {"label":"R04", "x":12, "y":0.4, "r":-10, "rx":12.5, "ry":1.5},
 
                 /* Rij 1 (Home) */
@@ -15,9 +15,9 @@
                 {"label":"L20", "x":0, "y":2.4, "r":10, "rx":0.5, "ry":1.5}, {"label":"L21", "x":1, "y":2.2}, {"label":"L22", "x":2, "y":2}, {"label":"L23", "x":3, "y":2.1}, {"label":"L24", "x":4, "y":2.3}, {"label":"L25", "x":5, "y":2.5},
                 {"label":"R20", "x":8, "y":2.3}, {"label":"R21", "x":9, "y":2.1}, {"label":"R22", "x":10, "y":2}, {"label":"R23", "x":11, "y":2.2}, {"label":"R24", "x":12, "y":2.4, "r":-10, "rx":12.5, "ry":1.5},
 
-                /* Thumbfan - Verlaagd en geroteerd in een boog */
-                {"label":"LT0", "x":1.5, "y":4.2, "r":25}, {"label":"LT1", "x":2.6, "y":4.8, "r":15}, {"label":"LT2", "x":3.8, "y":5.2, "r":5},
-                {"label":"RT0", "x":8.2, "y":5.2, "r":-5}, {"label":"RT1", "x":9.4, "y":4.8, "r":-15}, {"label":"RT2", "x":10.5, "y":4.2, "r":-25}
+                /* Thumbfan - Verplaatst naar beneden en in een vloeiende boog gezet */
+                {"label":"LT0", "x":1.8, "y":4.2, "r":25}, {"label":"LT1", "x":3.0, "y":4.8, "r":15}, {"label":"LT2", "x":4.3, "y":5.3, "r":5},
+                {"label":"RT0", "x":7.7, "y":5.3, "r":-5}, {"label":"RT1", "x":9.0, "y":4.8, "r":-15}, {"label":"RT2", "x":10.2, "y":4.2, "r":-25}
             ]
         }
     }
