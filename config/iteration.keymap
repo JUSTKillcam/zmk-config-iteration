@@ -3,34 +3,37 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    {
+    combos {
+        compatible = "zmk,combos";
+        combo_togg_game {
+            timeout-ms = <50>;
+            key-positions = <35 36 37>;
+            bindings = <&tog 4>;
+            layers = <0 4>;
+        };
+    };
+};
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  Pnk |  Rng |  Mid |  Idx |  Inr |  SCR |                                          |  Inr |  Idx |  Mid |  Rng |  Pnk |      |
-// |  Q   |  W   |  E   |  R   |  T   | SKIP |                                          |  Y   |  U   |  I   |  O   |  P   | BKSP |
-// |  A   |  S   |  D   |  F   |  G   |  H   |                                          |  J   |  K   |  L   |  ;   |  '   | ENTER|
-// |  Z   |  X   |  C   |  V   |  B   |  N   |                                          |  M   |  ,   |  .   |  /   | CTRL |
-//                     | NEAR | HOME|  FAR |                                          |  FAR | HOME| NEAR |
-            bindings = <
-/* Linkerkant (6 kolommen + 3 thumb) */                                         /* Rechterkant (5 kolommen + 3 thumb) */
-&kp Q      &kp W &kp E &kp R &kp T &none                                        &kp Y &kp U &kp I     &kp O   &kp P    &kp BSPC
-&kp A      &kp S &kp D &kp F &kp G &kp H                                        &kp J &kp K &kp L     &kp SEMI &kp SQT  &kp RET
-&kp Z      &kp X &kp C &kp V &kp B &kp N                                        &kp M &kp COMMA &kp DOT &kp FSLH &kp RCTRL &none
-                 &kp LGUI &kp DEL &kp RET                                       &kp SPACE &kp TAB &kp RALT
-            >;
-        };
+            display-name = "Default Layer";
+// 
+//    | Pinky | Ring  | Middle    | Index   | Inner | screen |             | Inner | Index   | Middle    | Ring  | Pinky   |
+//    | ----- | ----- | --------- | ------- | ----- | ------ |             | ----- | ------- | --------- | ----- | ------- |
+//    | q     | w     | e         | r       | t     | null   |             | y     | u       | i         | o     | p       |
+//    | a/gui | s/alt | d/control | f/shift | g     | copy   |             | h     | j/shift | k/control | l/alt | "/"/gui |
+//    | z     | x     | c         | v       | b     | paste  |             | n     | m       | ,/?       | ./!   | :/;     |
+//                 | Near            | Middle          | Far |             | Far          | Middle    | Near |
+//                 | Esc/Media layer | Space/Num layer | Tab |             | enter/tekens | Backspace | Del  |
 
-        function_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |      |BTCLR | BT0  | BT1  | BT2  |      |                                          |      |      |      |      |      |      |
-// |      |      |      | BT3  | BT4  |      |                                          |      |      |      |      |      |      |
+
             bindings = <
-&none      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none                  &trans &trans &trans &trans &trans &trans
-&trans     &trans     &trans       &bt BT_SEL 3 &bt BT_SEL 4 &trans                 &trans &trans &trans &trans &trans &trans
-&trans     &trans     &trans       &trans       &trans       &trans                 &trans &trans &trans &trans &trans &trans
-                                   &trans       &trans       &trans                 &trans &trans &trans
+         &kp Q      &kp W      &kp E       &kp R       &kp T &none                            &kp Y &kp U       &kp I           &kp O           &kp P                              
+         &mt LGUI A &mt LALT S &mt LCTRL D &mt LSHFT F &kp G &kp LC(C)                        &kp H &mt LSHFT J &mt LCTRL K     &mt LALT L      &mt LGUI SLASH              
+         &kp Z      &kp X      &kp C       &kp V       &kp B &kp LC(V)                        &kp N &kp M       &mt COMMA QMARK &mt PERIOD EXCL &mt COLON SEMI
+                                           &lt 3 ESC   &lt 1 SPACE &kp TAB             &lt 2 ENTER  &kp BSPC &kp DEL
             >;
         };
     };
