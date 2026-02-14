@@ -10,7 +10,7 @@
             timeout-ms = <50>;
             key-positions = <35 36 37>;
             bindings = <&tog 4>;
-            layers = <0 4 5>;
+            layers = <0 4>;
         };
     };
     keymap {
@@ -35,8 +35,7 @@
                                            &lt 3 ESC   &lt 1 SPACE &kp TAB             &lt 2 ENTER  &kp BSPC &kp DEL
             >;
         };
-    };
-            Number_nav_layer {
+        Number_nav_layer {
             display-name = "Number_layer";
 // 
 //    | Pinky | Ring  | Middle    | Index   | Inner | screen |             | Inner | Index   | Middle    | Ring  | Pinky   |
@@ -50,9 +49,28 @@
 
             bindings = <
          &kp PLUS       &kp N1      &kp N2       &kp N3       &kp STAR    &none                            &kp LC(X) &kp LEFT   &kp UP     &kp DOWN  &kp RIGHT                              
-         &mt LGUI MINUS &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp PERIOD  &kp LC(Z)                        &kp PG_UP &kt LSHFT  &kp LCTRL  &kt LALT  &kp LGUI              
+         &mt LGUI MINUS &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp PERIOD  &kp LC(Z)                        &kp PG_UP &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI              
          &kp EQUAL      &kp N7      &kp N8       &kp N9       &kp CARET   &kp LC(LS(Z))                    &kp PG_DN &kp CAPS   &caps_word &kp PSCRN &kp UNDERSCORE
                                                         &trans      &trans      &trans                  &trans      &trans      &trans
+            >;
+        };
+        tekens_layer {
+            display-name = "tekens_layer";
+// 
+//    | Pinky | Ring  | Middle | Index   | Inner | screen |                 | Inner | Index   | Middle    | Ring  | Pinky   |
+//    | ----- | ----- | ------ | ------- | ----- | ------ |                 | ----- | ------- | --------- | ----- | ------- |
+//    | <     | [     | (      | {       | '     | null   |                 |       | f1      | f2        | f3    | f4      |
+//    | >     | ]     | )      | }       | "     | |      |                 | ~     | f5      | f6        | f7    | f8      |
+//    | @     | #     | $      | %       | `     | \      |                 |       | f9      | f10       | f11   | f12     |
+//                 | Near            | Middle          | Far |         | Far          | Middle    | Near |
+//                 | Esc/Media layer | Space/Num layer | Tab |         | enter/tekens | Backspace | Del  |
+
+
+            bindings = <
+         &kp LT  &kp LBTK   &kp LPAR &kp LBRC  &kp APOS  &none                            &none     &kp F1  &kp F2  &kp F3  &kp F4                              
+         &kp GT  &kp RBTK   &kp RPAR &kp RBRC  &kp DQT   &kp PIPE                         &kp TILDE &kp F5  &kp F6  &kp F7  &kp F8              
+         &kp AT  &kp HASH   &kp DLLR &kp PRCNT &kp GRAVE &kp BSLH                         &none     &kp F9  &kp F10 &kp F11 &kp F12
+                                           &trans      &trans      &trans          &trans      &trans      &trans
             >;
         };
 };
