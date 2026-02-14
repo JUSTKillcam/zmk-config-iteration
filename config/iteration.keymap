@@ -3,17 +3,16 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    {
+    
     combos {
         compatible = "zmk,combos";
         combo_togg_game {
             timeout-ms = <50>;
             key-positions = <35 36 37>;
             bindings = <&tog 4>;
-            layers = <0 4>;
+            layers = <0 4 5>;
         };
     };
-};
     keymap {
         compatible = "zmk,keymap";
 
@@ -37,4 +36,23 @@
             >;
         };
     };
+            Number_nav_layer {
+            display-name = "Number_layer";
+// 
+//    | Pinky | Ring  | Middle    | Index   | Inner | screen |             | Inner | Index   | Middle    | Ring  | Pinky   |
+//    | ----- | ----- | --------- | ------- | ----- | ------ |             | ----- | ------- | --------- | ----- | ------- |
+//    | +     | 1     | 2         | 3       | *     | null   |             | cut   | left    | up        | down  | right   |
+//    | -/gui | 4/alt | 5/control | 6/shift | .     | undo   |             | pgup  | shift   | control   | alt   | gui     |
+//    | =     | 7     | 8         | 9       | ^     | redo   |             | pgdown| C_lock  | C_word    |prtscrn| _       |
+//                 | Near            | Middle          | Far |             | Far          | Middle    | Near |
+//                 | Esc/Media layer | Space/Num layer | Tab |             | enter/tekens | Backspace | Del  |
+
+
+            bindings = <
+         &kp PLUS       &kp N1      &kp N2       &kp N3       &kp STAR    &none                            &kp LC(X) &kp LEFT   &kp UP     &kp DOWN  &kp RIGHT                              
+         &mt LGUI MINUS &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp PERIOD  &kp LC(Z)                        &kp PG_UP &kt LSHFT  &kp LCTRL  &kt LALT  &kp LGUI              
+         &kp EQUAL      &kp N7      &kp N8       &kp N9       &kp CARET   &kp LC(LS(Z))                    &kp PG_DN &kp CAPS   &caps_word &kp PSCRN &kp UNDERSCORE
+                                                        &trans      &trans      &trans                  &trans      &trans      &trans
+            >;
+        };
 };
