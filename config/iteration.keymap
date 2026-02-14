@@ -112,5 +112,23 @@
                         &kp LSHFT &kp SPACE &kp LCTRL             &kp LALT &kp TAB &kp APOS
             >;
         };
-        
+        Game+_layer {
+            display-name = "Game+ Layer";
+// 
+//    | Pinky | Ring  | Middle    | Index   | Inner | screen |                       | Inner | Index   | Middle    | Ring  | Pinky |
+//    | ----- | ----- | --------- | ------- | ----- | ------ |                       | ----- | ------- | --------- | ----- | ----- |
+//    | y     | u     | i         | o       | p     | null   |                       |       |         |           |       |       |
+//    | j     | k     | l         | [       | ]     | esc    |                       |       |         |           |       |       |
+//    | n     | m     | ;         | :       | .     | enter  |                       |       |         |           |       |       |
+//                                      | Near | Middle | Far |               | Far | Middle | Near |
+//                                      | alt  | tab    | '   |               |     |        |      |
+
+
+            bindings = <
+         &kp Y &kp U &kp I    &kp O     &kp P      &none                           &trans &trans &trans &trans &trans                              
+         &kp J &kp K &kp L    &kp F     &kp G      &kp ESC                         &trans &trans &trans &trans &trans              
+         &kp n &kp M &kp SEMI &kp COLON &kp PERIOD &kp ENTER                       &trans &trans &trans &trans &trans 
+                                        &kp LALT &kp TAB &kp APOS             &trans &trans &trans 
+            >;
+        };
 };
