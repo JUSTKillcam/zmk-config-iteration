@@ -14,38 +14,45 @@
             layers = <0 4>;
         };
     };
+    &mt {
+    quick-tap-ms = <200>;
+    };
+
+    &lt {
+    quick-tap-ms = <200>;
+    };
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Default Layer";
 // 
-//    | Pinky | Ring  | Middle    | Index   | Inner | screen |             | Inner | Index   | Middle    | Ring  | Pinky   |
-//    | ----- | ----- | --------- | ------- | ----- | ------ |             | ----- | ------- | --------- | ----- | ------- |
-//    | q     | w     | e         | r       | t     | null   |             | y     | u       | i         | o     | p       |
-//    | a/gui | s/alt | d/control | f/shift | g     | copy   |             | h     | j/shift | k/control | l/alt | "/"/gui |
-//    | z     | x     | c         | v       | b     | paste  |             | n     | m       | ,/?       | ./!   | :/;     |
-//                 | Near            | Middle          | Far |             | Far          | Middle    | Near |
-//                 | Esc/Media layer | Space/Num layer | Tab |             | enter/tekens | Backspace | Del  |
+//    | Pinky | Ring  | Middle    | Index   | Inner | screen |                                    | Inner | Index   | Middle    | Ring  | Pinky   |
+//    | ----- | ----- | --------- | ------- | ----- | ------ |                                    | ----- | ------- | --------- | ----- | ------- |
+//    | q     | w     | e         | r       | t     | null   |                                    | y     | u       | i         | o     | p       |
+//    | a/gui | s/alt | d/control | f/shift | g     | copy   |                                    | h     | j/shift | k/control | l/alt | "/"/gui |
+//    | z     | x     | c         | v       | b     | paste  |                                    | n     | m       | ,/?       | ./!   | :/;     |
+//                 | Near            | Middle          | Far |                     | Far          | Middle    | Near       |
+//                 | Esc/Media layer | Space/Num layer | Tab/command |             | enter/tekens | Backspace | Del/magic  |
 
 
             bindings = <
          &kp Q      &kp W      &kp E       &kp R       &kp T &none                            &kp Y &kp U       &kp I           &kp O           &kp P                              
          &mt LGUI A &mt LALT S &mt LCTRL D &mt LSHFT F &kp G &kp LC(C)                        &kp H &mt LSHFT J &mt LCTRL K     &mt LALT L      &mt LGUI SLASH              
          &kp Z      &kp X      &kp C       &kp V       &kp B &kp LC(V)                        &kp N &kp M       &mt COMMA QMARK &mt PERIOD EXCL &mt COLON SEMI
-                                           &lt 3 ESC   &lt 1 SPACE &kp TAB             &lt 2 ENTER  &kp BSPC &kp DEL
+                                           &lt 3 ESC   &lt 1 SPACE &mt LS(LC(LA(F23))) TAB             &lt 2 ENTER  &kp BSPC &mt LS(LC(LA(F22))) DEL
             >;
         };
         Number_nav_layer {
             display-name = "Number_layer";
 // 
-//    | Pinky | Ring  | Middle    | Index   | Inner | screen |             | Inner | Index   | Middle  | Ring  | Pinky |
-//    | ----- | ----- | --------- | ------- | ----- | ------ |             | ----- | ------- | ------- | ----- | ----- |
-//    | +     | 1     | 2         | 3       | *     | null   |             | cut   | left    | up      | down  | right |
-//    | -/gui | 4/alt | 5/control | 6/shift | .     | undo   |             | pgup  | shift   | control | alt   | gui   |
-//    | =     | 7     | 8         | 9       | ^     | redo   |             | pgdown| C_lock  | C_word  |prtscrn| _     |
-//                 | Near            | Middle          | Far |             | Far          | Middle    | Near |
-//                 | Esc/Media layer | Space/Num layer | Tab |             | enter/tekens | Backspace | Del  |
+//    | Pinky | Ring  | Middle    | Index   | Inner | screen |                                  | Inner  | Index   | Middle  | Ring  | Pinky |
+//    | ----- | ----- | --------- | ------- | ----- | ------ |                                  | ------ | ------- | ------- | ----- | ----- |
+//    | +     | 1     | 2         | 3       | *     | null   |                                  | cut    | left    | up      | down  | right |
+//    | -/gui | 4/alt | 5/control | 6/shift | .     | undo   |                                  | pgup   | shift   | control | alt   | gui   |
+//    | =     | 7     | 8         | 9       | ^     | redo   |                                  | pgdown | C_lock  | C_word  |prtscrn| _     |
+//                 | Near            | Middle          | Far       |             | Far          | Middle    | Near      |
+//                 | Esc/Media layer | Space/Num layer | Tab/magic |             | enter/tekens | Backspace | Del/magic |
 
 
             bindings = <
@@ -58,13 +65,13 @@
         tekens_layer {
             display-name = "tekens_layer";
 // 
-//    | Pinky | Ring  | Middle | Index   | Inner | screen |                 | Inner | Index   | Middle    | Ring  | Pinky   |
-//    | ----- | ----- | ------ | ------- | ----- | ------ |                 | ----- | ------- | --------- | ----- | ------- |
-//    | <     | [     | (      | {       | '     | null   |                 |       | f1      | f2        | f3    | f4      |
-//    | >     | ]     | )      | }       | "     | |      |                 | ~     | f5      | f6        | f7    | f8      |
-//    | @     | #     | $      | %       | `     | \      |                 |       | f9      | f10       | f11   | f12     |
-//                 | Near            | Middle          | Far |         | Far          | Middle    | Near |
-//                 | Esc/Media layer | Space/Num layer | Tab |         | enter/tekens | Backspace | Del  |
+//    | Pinky | Ring  | Middle | Index   | Inner | screen |                                   | Inner | Index   | Middle    | Ring  | Pinky   |
+//    | ----- | ----- | ------ | ------- | ----- | ------ |                                   | ----- | ------- | --------- | ----- | ------- |
+//    | <     | [     | (      | {       | '     | null   |                                   |       | f1      | f2        | f3    | f4      |
+//    | >     | ]     | )      | }       | "     | |      |                                   | ~     | f5      | f6        | f7    | f8      |
+//    | @     | #     | $      | %       | `     | \      |                                   |       | f9      | f10       | f11   | f12     |
+//                 | Near            | Middle          | Far         |         | Far          | Middle    | Near       |
+//                 | Esc/Media layer | Space/Num layer | Tab/command |         | enter/tekens | Backspace | Del/magic  |
 
 
             bindings = <
@@ -77,13 +84,13 @@
         Media_layer {
             display-name = "Media_layer";
 // 
-//    | Pinky | Ring        | Middle     | Index     | Inner | screen |                   | Inner      | Index      | Middle | Ring         | Pinky  |
-//    | ----- | -----       | ------     | -------   | ----- | ------ |                   | ---------- | ---------- | ------ | ------------ | ------ |
-//    |       | volume down | mute       | volume up |       | null   |                   | Bt1        | Bt2        | Bt3    | Bt4          | Bt5    |
-//    |       | previous    | Play/pause | Next      |       |        |                   | ZMK unlock | bt clr all | bt clr | Outpt toggle |        |
-//    |       |             |            |           |       |        |                   | Soft_off   |            |        |              |        |
-//                                | Near            | Middle          | Far |         | Far          | Middle    | Near |
-//                                | Esc/Media layer | Space/Num layer | Tab |         | enter/tekens | Backspace | Del  |
+//    | Pinky | Ring        | Middle     | Index     | Inner | screen |                                       | Inner      | Index      | Middle | Ring         | Pinky  |
+//    | ----- | -----       | ------     | -------   | ----- | ------ |                                       | ---------- | ---------- | ------ | ------------ | ------ |
+//    |       | volume down | mute       | volume up |       | null   |                                       | Bt1        | Bt2        | Bt3    | Bt4          | Bt5    |
+//    |       | previous    | Play/pause | Next      |       |        |                                       | ZMK unlock | bt clr all | bt clr | Outpt toggle |        |
+//    |       |             |            |           |       |        |                                       | Soft_off   |            |        |              |        |
+//                                | Near            | Middle          | Far          |         | Far          | Middle    | Near       |
+//                                | Esc/Media layer | Space/Num layer | Tab//command |         | enter/tekens | Backspace | Del/magic  |
 
 
             bindings = <
