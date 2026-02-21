@@ -1,25 +1,41 @@
-&kscan0 {
-    col-gpios
-        = <&pro_micro 5  GPIO_ACTIVE_HIGH> // thumb far
-        , <&pro_micro 6  GPIO_ACTIVE_HIGH> // thumb home
-        , <&pro_micro 7  GPIO_ACTIVE_HIGH> // thumb near
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // inner
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // index
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // middle
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH> // ring
-        , <&pro_micro 10 GPIO_ACTIVE_HIGH> // pinky
-        ;
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix-transform = &default_transform;
+        zmk,display = &nice_view;
+    };
 
-    row-gpios
-        = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        ;
-};
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
 
-&default_transform {
-    col-offset = <6>; // Zorgt dat de rechterkant de juiste toetsen uit de keymap pakt
+        col-gpios
+            = <&pro_micro 5  GPIO_ACTIVE_HIGH>
+            , <&pro_micro 6  GPIO_ACTIVE_HIGH>
+            , <&pro_micro 7  GPIO_ACTIVE_HIGH>
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 10 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
+    default_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+        columns = <17>; // Total columns (9 left + 8 right)
+        rows = <4>;
+        map = <
+            // You will need to fill in your keymap coordinate map here
+        >;
+    };
 };
 
 &pro_micro_spi {
@@ -28,18 +44,8 @@
 
     nice_view: nice_view@0 {
         compatible = "nice,view";
-        label = "NICE_VIEW";
         reg = <0>;
         spi-max-frequency = <1000000>;
-    };
-};
-
-// Hiermee maken we een alias aan zodat ZMK het label 'nice_view_spi' herkent
-nice_view_spi: &pro_micro_spi {};
-
-/ {
-    chosen {
-        zmk,display = &nice_view;
     };
 };
 
