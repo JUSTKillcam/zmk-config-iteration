@@ -14,8 +14,6 @@
             layers = <0 4>;
         };
     };
-    
-    };
     keymap {
         compatible = "zmk,keymap";
         &mt {
@@ -24,7 +22,7 @@
 
     &lt {
         quick-tap-ms = <200>;
-
+        };
         default_layer {
             display-name = "Default Layer";
 // 
