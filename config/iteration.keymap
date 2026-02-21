@@ -13,10 +13,10 @@
             bindings = <&tog 4>;
             layers = <0 4>;
         };
-    };
+};
     &mt {
-    quick-tap-ms = <200>;
-    };
+        quick-tap-ms = <200>;
+        };
 
     &lt {
     quick-tap-ms = <200>;
