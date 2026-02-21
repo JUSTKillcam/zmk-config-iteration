@@ -66,8 +66,8 @@
 
 
             bindings = <
-         &kp LESS_THAN  &kp LEFT_BRACKET   &kp LPAR &kp LBRC  &kp APOS  &none                            &none     &kp F1  &kp F2  &kp F3  &kp F4                              
-         &kp GREATER_THAN  &kp RIGHT_BRACKET   &kp RPAR &kp RBRC  &kp DQT   &kp PIPE                         &kp TILDE &kp F5  &kp F6  &kp F7  &kp F8              
+         &kp LT  &kp LBKT   &kp LPAR &kp LBRC  &kp APOS  &none                            &none     &kp F1  &kp F2  &kp F3  &kp F4                              
+         &kp GT  &kp RBKT   &kp RPAR &kp RBRC  &kp DQT   &kp PIPE                         &kp TILDE &kp F5  &kp F6  &kp F7  &kp F8              
          &kp AT  &kp HASH   &kp DLLR &kp PRCNT &kp GRAVE &kp BSLH                         &none     &kp F9  &kp F10 &kp F11 &kp F12
                                            &trans      &trans      &trans          &trans      &trans      &trans
             >;
@@ -125,7 +125,7 @@
             bindings = <
          &kp Y &kp U &kp I    &kp O     &kp P      &none                           &trans &trans &trans &trans &trans                              
          &kp J &kp K &kp L    &kp F     &kp G      &kp ESC                         &trans &trans &trans &trans &trans              
-         &kp n &kp M &kp SEMI &kp COLON &kp PERIOD &kp ENTER                       &trans &trans &trans &trans &trans 
+         &kp N &kp M &kp SEMI &kp COLON &kp PERIOD &kp ENTER                       &trans &trans &trans &trans &trans 
                                         &kp LALT &kp TAB &kp APOS             &trans &trans &trans 
             >;
         };
