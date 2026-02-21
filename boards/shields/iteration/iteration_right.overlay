@@ -1,3 +1,4 @@
+#include "iteration.dtsi"
 &kscan0 {
     col-gpios
         = <&pro_micro 5  GPIO_ACTIVE_HIGH> // thumb far
