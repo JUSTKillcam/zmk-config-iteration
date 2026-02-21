@@ -14,12 +14,14 @@
             layers = <0 4>;
         };
     };
+// HIER komt de configuratie voor Mod-Tap (&mt)
     &mt {
         quick-tap-ms = <200>;
-        };
+    };
 
+    // HIER komt de configuratie voor Layer-Tap (&lt)
     &lt {
-    quick-tap-ms = <200>;
+        quick-tap-ms = <200>;
     };
     keymap {
         compatible = "zmk,keymap";
