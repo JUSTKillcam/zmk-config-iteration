@@ -16,15 +16,7 @@
     };
     keymap {
         compatible = "zmk,keymap";
-        &mt {
-        quick-tap-ms = <200>;
-    };
 
-    &lt {
-        quick-tap-ms = <200>;
-        };
-        default_layer {
-            display-name = "Default Layer";
 // 
 //    | Pinky | Ring  | Middle    | Index   | Inner | screen |                                    | Inner | Index   | Middle    | Ring  | Pinky   |
 //    | ----- | ----- | --------- | ------- | ----- | ------ |                                    | ----- | ------- | --------- | ----- | ------- |
