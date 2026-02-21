@@ -1,4 +1,5 @@
 #include "iteration.dtsi"
+
 &kscan0 {
     col-gpios
         = <&pro_micro 5  GPIO_ACTIVE_HIGH> // thumb far
@@ -18,10 +19,32 @@
         , <&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 };
-&nice_view_spi {
+
+&default_transform {
+    col-offset = <6>; // Zorgt dat de rechterkant de juiste toetsen uit de keymap pakt
+};
+
+&pro_micro_spi {
+    status = "okay";
     cs-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW>;
+
+    nice_view: nice_view@0 {
+        compatible = "nice,view";
+        label = "NICE_VIEW";
+        reg = <0>;
+        spi-max-frequency = <1000000>;
+    };
+};
+
+// Hiermee maken we een alias aan zodat ZMK het label 'nice_view_spi' herkent
+nice_view_spi: &pro_micro_spi {};
+
+/ {
+    chosen {
+        zmk,display = &nice_view;
+    };
 };
 
 &pro_micro_i2c {
-    status = "disabled"; // Schakel I2C uit als je alleen SPI gebruikt voor nice!view
+    status = "disabled";
 };
