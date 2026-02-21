@@ -1,0 +1,27 @@
+if SHIELD_ITERATION_LEFT || SHIELD_ITERATION_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Iteration"
+
+config ZMK_SPLIT
+    default y
+
+# Activeer Display functies voor de Nice!View
+config ZMK_DISPLAY
+    default y
+
+# Zorgt dat de combo's uit je keymap werken
+config ZMK_COMBO_MAX_COMBOS_PER_KEY
+    default 1
+
+# Activeert ZMK Studio support (gezien je studio_unlock binding)
+config ZMK_STUDIO
+    default y
+
+# Verbetert de batterij rapportage voor split keyboards
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    default y
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+    default y
+
+endif

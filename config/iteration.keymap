@@ -16,7 +16,8 @@
     };
     keymap {
         compatible = "zmk,keymap";
-
+        Default_layer {
+            display-name = "Default_layer";
 // 
 //    | Pinky | Ring  | Middle    | Index   | Inner | screen |                                    | Inner | Index   | Middle    | Ring  | Pinky   |
 //    | ----- | ----- | --------- | ------- | ----- | ------ |                                    | ----- | ------- | --------- | ----- | ------- |
