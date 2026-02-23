@@ -130,4 +130,5 @@
                                         &kp LALT &kp TAB &kp APOS             &trans &trans &trans 
             >;
         };
+    };
 };
