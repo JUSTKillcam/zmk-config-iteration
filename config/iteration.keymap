@@ -8,7 +8,7 @@
     flavor = "tap-preferred";
 };
 
-&mt {
+&lt;mt {
     flavor = "tap-preferred";
     quick-tap-ms = <150>;
 };
@@ -41,10 +41,10 @@
             //                 | Esc/Media layer | Space/Num layer | Tab/command |             | enter/tekens | Backspace | Del/magic  |
 
             bindings = <
-&kp Q       &kp W       &kp E        &kp R        &kp T                                                                                                              &kp Y  &kp U        &kp I            &kp O            &kp P
-&mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G  &kp LC(C)                                                                                                   &kp H  &mt LSHFT J  &mt LCTRL K      &mt LALT L       &mt LGUI SLASH
-&kp Z       &kp X       &kp C        &kp V        &kp B  &kp LC(V)                                                                                                   &kp N  &kp M        &mt COMMA QMARK  &mt PERIOD EXCL  &mt COLON SEMI
-                                                                    &lt 3 ESC  &lt 1 SPACE  &mt LGUI(LA(SPACE))) TAB  &lt 2 ENTER  &kp BSPC  &mt LS(LC(LA(F22))) DEL
+&kp Q       &kp W       &kp E        &kp R        &kp T                                                                                                              &kp Y  &kp U        &kp I      [...]
+&mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G  &kp LC(C)                                                                                                   &kp H  &mt LSHFT J  &mt LCTRL K[...]
+&kp Z       &kp X       &kp C        &kp V        &kp B  &kp LC(V)                                                                                                   &kp N  &kp M        &mt COMMA Q[...]
+                                                                    &lt 3 ESC  &lt 1 SPACE  &mt LGUI(LA(SPACE)) TAB  &lt 2 ENTER  &kp BSPC  &mt LS(LC(LA(F22))) DEL
             >;
         };
 
@@ -64,7 +64,7 @@
 &kp PLUS        &kp N1       &kp N2        &kp N3        &kp STAR                                                                  &kp LC(X)  &kp LEFT   &kp UP      &kp DOWN   &kp RIGHT
 &mt LGUI MINUS  &mt LALT N4  &mt LCTRL N5  &mt LSHFT N6  &kp N0     &kp LC(Z)                                                      &kp PG_UP  &kp LSHFT  &kp LCTRL   &kp LALT   &kp LGUI
 &kp EQUAL       &kp N7       &kp N8        &kp N9        &kp CARET  &kp LC(LS(Z))                                                  &kp PG_DN  &kp CAPS   &caps_word  &kp PSCRN  &kp UNDERSCORE
-                                                                                   &trans  &trans  &trans  &trans  &trans  &trans
+                                                                                    &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -116,7 +116,7 @@
             //    | ----- | ----- | --------- | ------- | ----- | ------ |                       | ----- | ------- | --------- | ----- | ----- |
             //    | q     | w     | e         | r       | t     |        |                       | y     | u       | i         | o     | p     |
             //    | a     | s     | d         | f       | g     | h      |                       | j     | k       | l         | [     | ]     |
-            //    | z     | x     | c         | v       | b     | Game+  |                       | n     | m       | ;         | :     | .     |
+            //    | z     | x     | c         | v       | b     | Game+  |                       | n     | m     | ;         | :     | .     |
             //                                      | Near  | Middle | Far  |               | Far | Middle | Near |
             //                                      | shift |  Space | ctrl |               | alt | tab    | '    |
 
@@ -124,7 +124,7 @@
 &kp Q  &kp W  &kp E  &kp R  &kp T                                                                       &kp Y  &kp U  &kp I     &kp O      &kp P
 &kp A  &kp S  &kp D  &kp F  &kp G  &kp H                                                                &kp J  &kp K  &kp L     &kp LBKT   &kp RBKT
 &kp Z  &kp X  &kp C  &kp V  &kp B  &sl 5                                                                &kp N  &kp M  &kp SEMI  &kp COLON  &kp PERIOD
-                                          &kp LSHFT  &kp SPACE  &kp LCTRL  &kp LALT  &kp TAB  &kp APOS
+                                           &kp LSHFT  &kp SPACE  &kp LCTRL  &kp LALT  &kp TAB  &kp APOS
             >;
         };
 
@@ -144,7 +144,7 @@
 &kp Y  &kp U  &kp I     &kp O      &kp P                                                                       &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp F3
 &kp J  &kp K  &kp L     &kp F      &kp G       &kp ESC                                                         &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0
 &kp N  &kp M  &kp SEMI  &kp COLON  &kp PERIOD  &kp ENTER                                                       &trans  &kp N7        &kp N8        &kp N9        &trans
-                                                          &kp LALT  &kp TAB  &kp APOS  &trans  &trans  &trans
+                                                           &kp LALT  &kp TAB  &kp APOS  &trans  &trans  &trans
             >;
         };
     };
