@@ -44,7 +44,7 @@
 &kp Q       &kp W       &kp E        &kp R        &kp T                                                                                                              &kp Y  &kp U        &kp I            &kp O            &kp P
 &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G  &kp LC(C)                                                                                                   &kp H  &mt LSHFT J  &mt LCTRL K      &mt LALT L       &mt LGUI SLASH
 &kp Z       &kp X       &kp C        &kp V        &kp B  &kp LC(V)                                                                                                   &kp N  &kp M        &mt COMMA QMARK  &mt PERIOD EXCL  &mt COLON SEMI
-                                                                    &lt 3 ESC  &lt 1 SPACE  &mt LS(LC(LA(F23))) TAB  &lt 2 ENTER  &kp BSPC  &mt LS(LC(LA(F22))) DEL
+                                                                    &lt 3 ESC  &lt 1 SPACE  &mt LGUI(LA(SPACE))) TAB  &lt 2 ENTER  &kp BSPC  &mt LS(LC(LA(F22))) DEL
             >;
         };
 
