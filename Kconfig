@@ -1,0 +1,10 @@
+DT_COMPAT_ZMK_LAYER_RELAY_DISPLAY := zmk,layer-relay-display
+
+config ZMK_LAYER_RELAY_DISPLAY
+    bool "Show the layer relayed from the central on the peripheral nice!view"
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_LAYER_RELAY_DISPLAY))
+    depends on ZMK_DISPLAY && ZMK_SPLIT && !ZMK_SPLIT_ROLE_CENTRAL
+    select ZMK_OUTPUT_BEHAVIOR_LISTENER
+    select LV_USE_CANVAS
+    select LV_USE_IMG
+    select LV_FONT_MONTSERRAT_16

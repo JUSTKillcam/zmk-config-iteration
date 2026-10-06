@@ -34,3 +34,17 @@
     kscan = <&kscan0>;
 };
 
+
+/* Layer relay (peripheral side): receive the layer and show it on the nice!view */
+/ {
+    layer_display: layer_display {
+        compatible = "zmk,layer-relay-display";
+        layer-names = "Default", "Number", "Tekens", "Media", "Game", "Game+";
+    };
+
+    layer_relay_channel {
+        compatible = "zmk,split-peripheral-output-relay";
+        device = <&layer_display>;
+        relay-channel = <201>;
+    };
+};
