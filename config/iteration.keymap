@@ -4,13 +4,13 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &lt {
-    quick-tap-ms = <150>;
+    quick-tap-ms = <250>;
     flavor = "tap-preferred";
 };
 
 &mt {
     flavor = "tap-preferred";
-    quick-tap-ms = <150>;
+    quick-tap-ms = <250>;
 };
 
 / {
