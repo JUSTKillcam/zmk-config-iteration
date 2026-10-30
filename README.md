@@ -4,6 +4,8 @@
 
 Iteration is a 38-key wireless split keyboard running [ZMK](https://zmk.dev). Its two halves are fanned outward for a relaxed hand position, with column stagger and a three-key thumb cluster on each side. Both halves use a nice!nano v2, and the right half has a nice!view screen.
 
+![Keyboard layout](.github/shield-wizard-layout.svg)
+
 Firmware builds automatically under the **Actions** tab. The keymap is in [`config/iteration.keymap`](config/iteration.keymap).
 
 <details>
