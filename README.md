@@ -4,8 +4,8 @@
 
 Download compiled firmware from the Actions tab. <https://zmk.dev/docs/user-setup#installing-the-firmware>
 
-Edit your keymap <https://zmk.dev/docs/keymaps>.
 User keymap is located at [`config/iteration.keymap`](config/iteration.keymap).
+![Keyboard Layout](.github/Split Mechanical Keyboards on Leather Mat.png)
 
 -----
 
